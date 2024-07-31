@@ -1,0 +1,112 @@
+﻿@using EfficiencySystem.Models.ViewModels
+@using EfficiencySystem.Models
+@using System
+@model EfficiencySystem.Models.ViewModels.WorkShiftViewModel
+
+@{
+    ViewData["Title"] = "Work shifts";
+}
+
+<div class="vertivalFlexContainer">
+
+    <div class="pageHeader">
+        <div><h3 style="">Work shifts</h3></div>
+
+        <div class="filtersContainer">
+            <form asp-controller="WorkShift" asp-action="Index" method="get" class="filtersForm">
+                <div style="display: flex;">
+
+                    <label for="DateFirst" class="InputLabel">From</label>
+                    <input id="DateFirst" asp-for="DateFirst" class="DateTimeInput" type="date" value="@Model.DateFirst.ToString("yyyy-MM-dd")">
+                    <label class="InputLabel">to</label>
+                    <input id="DateSecond" asp-for="DateSecond" class="DateTimeInput" type="date" value="@Model.DateSecond.ToString("yyyy-MM-dd")">
+
+                    <div style="align-self: center; margin-left: 1em;">
+                        <input id="btnOk" class="btn btn-primary btnReport" type="submit" value="Ok" />
+                        <button id="btning" class="btn btn-primary invisible btnReport" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Downloading...
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div style="width: 100%; display: flex; flex-direction: column;">
+        <div style="margin-top: 1em; width: 90%; align-self: center;">
+
+            <div style="width: 100%;">
+                <table class="BlueTable SelectableTable" style="margin-top: 0.5em; width: 100%;">
+                    <tr>
+                        <th>Restaurant</th>
+                        <th>Date</th>
+                        <th>Employee</th>
+                        <th>TimeStart</th>
+                        <th>TimeFinish</th>
+                    </tr>
+
+                    @foreach (var item in Model.WorkShifts.OrderBy(i => i.Date).ThenBy(i => i.RestaurantId))
+                    {
+                        <tr class="SelectableRow" data-id="@item.Id">
+
+                            @if (item.Restaurant == null)
+                            {
+                                <td></td>
+                            }
+                            else
+                            {
+                                <td>@item.Restaurant.Name</td>
+                            }
+
+                            <td style="text-align: center;">@item.Date.ToString("yyyy-MM-dd")</td>
+
+                            @if (item.Staff == null)
+                            {
+                                <td></td>
+                            }
+                            else
+                            {
+                                <td>@item.Staff.Name</td>
+                            }
+
+                            <td style="text-align: center;">@item.TimeStart.ToString("HH:mm")</td>
+                            <td style="text-align: center;">@item.TimeFinish.ToString("HH:mm")</td>
+
+                        </tr>
+                    }
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<style>
+
+    .disabledHover:hover {
+        background: white !important;
+        color: inherit !important;
+        transform: scale(1) !important;
+    }
+
+</style>
+
+<script>
+
+    $('#btnOk').click(
+        function (e) {
+            $(this).addClass('invisible');
+            $('#btning').removeClass('invisible');
+        }
+    );
+
+    $('.SelectableRow').click(
+        function (e) {
+            location.href = "/Worktimes/Worktime/" + $(e.currentTarget).data().id;
+        }
+    );
+
+</script>

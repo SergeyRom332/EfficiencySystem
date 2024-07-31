@@ -1,0 +1,80 @@
+﻿@using EfficiencySystem.Models.ViewModels
+@using EfficiencySystem.Models
+@using System
+@model EfficiencySystem.Models.ViewModels.SalaryViewModel
+
+@{
+    ViewData["Title"] = "Couriers";
+}
+
+<div class="vertivalFlexContainer">
+
+    <div class="pageHeader">
+        <div><h3 style="">Couriers</h3></div>
+
+        <div class="filtersContainer">
+            <form asp-controller="Salary" asp-action="Couriers" method="get" class="filtersForm">
+                <div style="display: flex;">
+
+                    <label for="DateFirst" class="InputLabel">From</label>
+                    <input id="DateFirst" asp-for="DateFirst" class="DateTimeInput" type="date" min="@Model.DateFirst" max='@DateTime.Today.ToString("yyyy-MM-dd")'>
+                    <label class="InputLabel">to</label>
+                    <input id="DateSecond" asp-for="DateSecond" class="DateTimeInput" type="date" min="@Model.DateSecond" max='@DateTime.Today.ToString("yyyy-MM-dd")'>
+
+                    <div style="align-self: center; margin-left: 1em;">
+                        <input id="btnOk" class="btn btn-primary btnReport" type="submit" value="Ok" />
+                        <button id="btning" class="btn btn-primary invisible btnReport" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Downloading...
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div style="width: 100%; display: flex; flex-direction: column;">
+        <div style="margin-top: 0.1em; width: 90%; align-self: center;">
+
+            <div style="width: 100%;">
+                <table class="BlueTable SelectableTableNotLastRow" style="margin-bottom: 3em;">
+                    <tr>
+                        <th>Name</th>
+                        <th>Shifts count</th>
+                        <th">
+                            Salary sum</th>
+                            <th>Bonus sum</th>
+                            <th>Adjustment sum</th>
+                            <th>Final sum</th>
+                    </tr>
+
+                        @foreach (var item in Model.Salaries.Where(i => i.Staff != null).OrderBy(i => i.Staff.Name))
+                        {
+                        <tr>
+                            <td><a href="/Staff/Employe/@item.Staff.Id" title="Open employee profile" style="color:black;">@item.Staff.Name</a></td>
+                            <td style="text-align:center;">@item.ShiftsCount</td>
+                            <td style="text-align:center;">@item.SalarySum</td>
+                            <td style="text-align:center;">@item.BonusSum</td>
+                            <td style="text-align:center;">@item.AdjustmentSum</td>
+                            <td style="text-align:center;">@item.FinalSum</td>
+                        </tr>
+                        }
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    $('#btnOk').click(
+        function (e) {
+            $(this).addClass('invisible');
+            $('#btning').removeClass('invisible');
+        }
+    );
+
+</script>

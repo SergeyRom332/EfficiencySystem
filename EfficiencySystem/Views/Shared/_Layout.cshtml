@@ -1,0 +1,132 @@
+﻿@using System.Security.Claims;
+<!DOCTYPE html>
+<html style="height: 100%;" lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/lib/jquery/dist/jquery-ui.min.css" rel="stylesheet">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery-ui.min.js"></script>
+    <script src="~/js/chart.min.js"></script>
+    <script src="~/js/all.min.js"></script>
+</head>
+
+<body style="height: 100%; margin: 0;">
+    
+    <div id="Main" style="display: flex; flex-direction: row; height: 100%;">
+
+        <div id="mainMenuButton"><span style="font-size:1.6em;">☰</span></div>
+
+        <!--Main menu-->
+        <div id="mainMenu" class="zeroWidth"> 
+
+            <div id="mainMenuHeader">Меню</div>
+
+            <ul  id="mainMenuBody">
+                
+                <li class="MenuItem" style="background: rgb(179, 25, 11);"><a href="/Revenue/">Revenue</a></li>
+
+                <li class="MenuItem" style="background: #803CBE;"><a href="/Orders/">Orders</a></li>
+
+                <li class="MenuItem" style="background: #EC1B5A;"><a href="/Staff/">Staff</a></li>
+
+                <li class="DropDownMenuItem">
+                    <div class="DropDownMenuItemHeader" style="background: #57BF6A;"><span>Salary</span></div>
+
+                    <ul class="DropDownMenuItemBody">
+                        <li class="DropDownMenuSubItem"><a href="/Salary/Cashiers">Cashiers</a></li>
+                        <li class="DropDownMenuSubItem"><a href="/Salary/Cooks">Cooks</a></li>
+                        <li class="DropDownMenuSubItem"><a href="/Salary/Couriers">Couriers</a></li>
+                    </ul>
+                </li>
+
+                <li class="MenuItem" style="background: #2330E1;"><a href="/WorkShift/">Work shifts</a></li>
+                
+            </ul>
+            
+        </div>
+
+        <div style="display: flex;  flex-direction: column; flex-grow: 1;">
+
+            <!--Header-->
+            <div id="header">
+
+                <div id="loginLabel">
+                        @if(string.IsNullOrEmpty(@User.Claims.Where(i=>i.Type == "Name").FirstOrDefault()?.Value)){
+                        <a id="loginLabelLink" href="/Authorization/LogInPage">
+                            <i class="fa-solid fa-arrow-right-to-bracket fa-lg" style="margin-right: 0.5em"></i>
+                            <span style="color: rgba(0,0,0,0);">Log in</span></a>
+                        }
+                        else{
+                        <a id="loginLabelLink" href="/Authorization/LogOutPage">
+                            <i class="fa-solid fa-arrow-right-to-bracket fa-lg" style="margin-right: 0.3em"></i>
+                                <span style="color: rgba(0,0,0,0);">@User.Claims.Where(i=>i.Type == "Name").FirstOrDefault()?.Value</span>
+                            </a>
+                        }
+                </div>
+
+            </div>
+
+            <!--Body-->
+            <div style="flex-grow: 1;">
+                @RenderBody()
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        $('#mainMenuButton').click(function(){
+            $('#mainMenu').toggleClass('zeroWidth');
+            $('#mainMenuButton').toggleClass('mainMenuButtonActive');
+            
+            if($('#mainMenu').hasClass('zeroWidth')){
+                $('#mainMenuButton').first().children().first().text('☰');
+            }
+            else{
+                $('#mainMenuButton').first().children().first().text('✕');
+            }
+        });
+
+        $('.DropDownMenuItemHeader').click(
+            function(){
+
+                var panel = this.nextElementSibling;
+
+                this.classList.toggle('arrowUp');
+
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } 
+                else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
+        );
+
+        let UserName = '@User.Claims.Where(i=>i.Type == "Name").FirstOrDefault()?.Value';
+
+        $('#loginLabelLink').hover(
+            function(){
+                $('#loginLabelLink').children().eq(1).css('color', 'black');
+                let el = document.getElementById('loginLabel');
+                el.style.maxWidth = el.scrollWidth + 50 + "px";
+            },
+            function(){
+                let el = document.getElementById('loginLabel');
+                el.style.maxWidth = "3.3em";
+                $('#loginLabelLink').children().eq(1).css('color', 'rgba(0,0,0,0)');
+            }
+        );
+
+    </script>
+
+</body>
+</html>

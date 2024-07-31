@@ -1,0 +1,69 @@
+﻿@using System.Security.Claims;
+
+@{
+    ViewData["Title"] = "Log out";
+}
+
+<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+
+    <div style="background: white; border-radius: 5%; width: 15%; height: 40%; max-height: 23em; min-width: 153px; min-height: 193px; box-shadow: 0px 0px 10px 0px black;">
+        <form id="logOutForm" asp-controller="Authorization" asp-action="LogOut" method="post" class="needs-validation g-3" style="width: 100%; height: 100%;">
+
+            <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 2em 2em 2em 2em; width: 100%; height: 100%;">
+
+                <div style="width: 100%; height: 70%;">
+
+                    <div class="form-floating">
+                        <input Name="Name" type="text" class="form-control" id="floatingName" placeholder="Name" style="font-size: inherit;"
+                               value='@User.Claims.Where(i=>i.Type == "Name").FirstOrDefault()?.Value'>
+                        <label for="floatingName">Name</label>
+                    </div>
+
+                    <div class="form-floating" style="margin-top: 1em;">
+                        <input Name="Position" type="text" class="form-control" id="floatingPosition" placeholder="Должность" style="font-size: inherit;"
+                               value='@User.Claims.Where(i=>i.Type == "Role").FirstOrDefault()?.Value'>
+                        <label for="floatingPosition">Position</label>
+                    </div>
+                </div>
+
+                <input id="btnOk" style="width: 50%" class="btn btn-primary" type="submit" value="Log out" />
+                <button id="btning" class="btn btn-primary invisible" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+<script>
+
+    $('#logOutForm').submit(function (event) {
+
+        $('#btnOk').addClass('invisible');
+        $('#btning').removeClass('invisible');
+        event.preventDefault();
+
+        // var LogInResult = $.getJSON('/Authorization/LogOut', $("#logOutForm").serialize());
+
+        var LogInResult = $.ajax({
+            url: '/Authorization/LogOut'
+        });
+
+        LogInResult.done(function (data) {
+            location.href = "/";
+
+            $('#btnOk').removeClass('invisible');
+            $('#btning').addClass('invisible');
+        });
+
+        LogInResult.fail(function (data) {
+            console.log('JASON failed');
+            $('#btnOk').removeClass('invisible');
+            $('#btning').addClass('invisible');
+        });
+    });
+
+</script>

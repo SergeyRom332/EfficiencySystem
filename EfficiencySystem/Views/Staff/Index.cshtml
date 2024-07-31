@@ -1,0 +1,96 @@
+﻿@using EfficiencySystem.Models.ViewModels
+@using EfficiencySystem.Models
+@using System
+@model EfficiencySystem.Models.ViewModels.StaffViewModel
+
+@{
+    ViewData["Title"] = "Staff";
+}
+
+<div class="vertivalFlexContainer">
+
+    <div class="pageHeader">
+        <div><h3 style="">Staff</h3></div>
+
+        <div class="filtersContainer">
+            <form asp-controller="Staff" asp-action="Index" method="get" class="filtersForm">
+
+                <div style="display: flex;">
+                    <label class="InputLabel">Department: </label>
+                    <select asp-for="DepartmentId" class="SelectInput" data-show-subtext="true">
+                        @foreach (Department dep in Model.Departments)
+                        {
+                            <option value="@dep.Id" data-subtext="@dep.Id">@dep.Name</option>
+                        }
+                    </select>
+
+                    <div style="align-self: center; margin-left: 1em;">
+                        <input id="btnOk" class="btn btn-primary btnReport" type="submit" value="Обновить" />
+                        <button id="btning" class="btn btn-primary invisible btnReport" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Downloading...
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div style="width: 100%; display: flex; flex-direction: column;">
+        <div style="margin-top: 0.1em; width: 90%; align-self: center;">
+
+            <table class="BlueTable SelectableTable" style="margin-top: 3em; width: 100%;">
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Position</th>
+                    <th>Phone</th>
+                </tr>
+                @foreach (Staff item in Model.Staff)
+                {
+                    <tr class="SelectableRow" data-id="@item.Id">
+                        
+                        <td>@item.Name</td>
+                        @if (item.Department == null)
+                        {
+                            <td> </td>
+                        }
+                        else
+                        {
+                            <td>@item.Department.Name</td>
+                        }
+                        @if (item.Position == null)
+                        {
+                            <td> </td>
+                        }
+                        else
+                        {
+                            <td>@item.Position.Name</td>
+                        }
+                        <td>@item.Phone</td>
+                        
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    $('#btnOk').click(
+        function (e) {
+            $(this).addClass('invisible');
+            $('#btning').removeClass('invisible');
+        }
+    );
+
+    $('.SelectableRow').click(
+        function (e) {
+            location.href = "/Staff/Employee/" + $(e.currentTarget).data().id
+        }
+    );
+
+</script>

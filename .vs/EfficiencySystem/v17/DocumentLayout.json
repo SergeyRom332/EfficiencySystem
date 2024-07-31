@@ -1,0 +1,273 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\models\\services\\salaryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\models\\services\\salaryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\models\\services\\workshiftservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\models\\services\\workshiftservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\controllers\\salarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\controllers\\salarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|a:\\programming\\c#\\education\\projects\\efficiencysystem\\efficiencysystem\\controllers\\workshiftcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\controllers\\workshiftcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\views\\workshift\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\views\\workshift\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\views\\staff\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\views\\staff\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\views\\orders\\order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\views\\orders\\order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\models\\workshift.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\models\\workshift.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\models\\viewmodels\\workshiftviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\models\\viewmodels\\workshiftviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\models\\viewmodels\\revenueviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\models\\viewmodels\\revenueviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\models\\viewmodels\\salaryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\models\\viewmodels\\salaryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\models\\maindbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\models\\maindbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\efficiencysystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854CC648-42FF-497A-BD13-4BB8DA567328}|EfficiencySystem\\EfficiencySystem.csproj|solutionrelative:efficiencysystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MainDbContext.cs",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\MainDbContext.cs",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Models\\MainDbContext.cs",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\MainDbContext.cs",
+              "RelativeToolTip": "EfficiencySystem\\Models\\MainDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T10:11:23.516Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Program.cs",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Program.cs",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Program.cs",
+              "RelativeToolTip": "EfficiencySystem\\Program.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABkAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T10:42:26.863Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "EfficiencySystem\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAABjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T09:27:14.627Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SalaryController.cs",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Controllers\\SalaryController.cs",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Controllers\\SalaryController.cs",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Controllers\\SalaryController.cs",
+              "RelativeToolTip": "EfficiencySystem\\Controllers\\SalaryController.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAIwE0AAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T19:46:54.17Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WorkShiftController.cs",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Controllers\\WorkShiftController.cs",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Controllers\\WorkShiftController.cs",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Controllers\\WorkShiftController.cs",
+              "RelativeToolTip": "EfficiencySystem\\Controllers\\WorkShiftController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAgAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T21:57:45.701Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Views\\WorkShift\\Index.cshtml",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Views\\WorkShift\\Index.cshtml",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Views\\WorkShift\\Index.cshtml",
+              "RelativeToolTip": "EfficiencySystem\\Views\\WorkShift\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T21:56:59.872Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WorkShift.cs",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\WorkShift.cs",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Models\\WorkShift.cs",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\WorkShift.cs",
+              "RelativeToolTip": "EfficiencySystem\\Models\\WorkShift.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T22:12:15.342Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WorkShiftViewModel.cs",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\ViewModels\\WorkShiftViewModel.cs",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Models\\ViewModels\\WorkShiftViewModel.cs",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\ViewModels\\WorkShiftViewModel.cs",
+              "RelativeToolTip": "EfficiencySystem\\Models\\ViewModels\\WorkShiftViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T22:07:27.845Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SalaryService.cs",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\Services\\SalaryService.cs",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Models\\Services\\SalaryService.cs",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\Services\\SalaryService.cs",
+              "RelativeToolTip": "EfficiencySystem\\Models\\Services\\SalaryService.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAADwv2gAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T21:50:43.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WorkShiftService.cs",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\Services\\WorkShiftService.cs",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Models\\Services\\WorkShiftService.cs",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\Services\\WorkShiftService.cs",
+              "RelativeToolTip": "EfficiencySystem\\Models\\Services\\WorkShiftService.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAApwEMAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T21:49:46.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StaffController.cs",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Controllers\\StaffController.cs",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Controllers\\StaffController.cs",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Controllers\\StaffController.cs",
+              "RelativeToolTip": "EfficiencySystem\\Controllers\\StaffController.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAIwCUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T23:00:13.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Order.cshtml",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Views\\Orders\\Order.cshtml",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Views\\Orders\\Order.cshtml",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Views\\Orders\\Order.cshtml",
+              "RelativeToolTip": "EfficiencySystem\\Views\\Orders\\Order.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T22:29:18.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RevenueViewModel.cs",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\ViewModels\\RevenueViewModel.cs",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Models\\ViewModels\\RevenueViewModel.cs",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\ViewModels\\RevenueViewModel.cs",
+              "RelativeToolTip": "EfficiencySystem\\Models\\ViewModels\\RevenueViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T21:13:43.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Views\\Staff\\Index.cshtml",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Views\\Staff\\Index.cshtml",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Views\\Staff\\Index.cshtml",
+              "RelativeToolTip": "EfficiencySystem\\Views\\Staff\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T21:10:42.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SalaryViewModel.cs",
+              "DocumentMoniker": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\ViewModels\\SalaryViewModel.cs",
+              "RelativeDocumentMoniker": "EfficiencySystem\\Models\\ViewModels\\SalaryViewModel.cs",
+              "ToolTip": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\Models\\ViewModels\\SalaryViewModel.cs",
+              "RelativeToolTip": "EfficiencySystem\\Models\\ViewModels\\SalaryViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T21:46:13.751Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

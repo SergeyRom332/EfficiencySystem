@@ -1,0 +1,97 @@
+﻿@using EfficiencySystem.Models.ViewModels
+@using EfficiencySystem.Models
+@using System
+@model EfficiencySystem.Models.Staff
+
+@{
+    ViewData["Title"] = Model == null ? Model.Name : "Employee";
+}
+
+<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+
+    <div style="background: white; border-radius: 15px; width: 63em; height: 33em; min-height: 193px; box-shadow: 0px 0px 10px 0px black;">
+        <form id="employeeForm" asp-controller="Staff" asp-action="Employee" method="update" class="needs-validation g-3" style="width: 100%; height: 100%;">
+
+            <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 2em 2em 2em 2em; width: 100%; height: 100%;">
+
+                <div style="width: 100%;">
+                    <span style="font-size: 1.5em;"><h3 style="display: inline;">Employee: </h3>@Model.Name</span>
+                </div>
+
+                <div style="display: flex; width: 100%; padding-left: 3em;">
+
+                    <div style=""><img src="\pictures\profilepic.png" style="width: 15em;"></div>
+
+                    <div style="display: flex; flex-direction: column; width: 29em; padding: 3em 0em 0em 3.5em;">
+                        <div style="display: none;">
+                            <input name="Id" asp-for="Id" type="text" class="BlueTextBox" value="@Model.Id" />
+                        </div>
+                        <div style=" margin-bottom: 1em;">
+                            <label class="InputLabel">Name: </label>
+                            <input name="Name" asp-for="Name" type="text" style="width: 17.1em; padding: 0.3em 0.3em 0.3em 0.3em; background: white;"
+                                   class="BlueTextBox" value="@Model.Name" />
+                        </div>
+                        <div style=" margin-bottom: 1em;">
+                            <label class="InputLabel">Phone: </label>
+                            <input name="Phone" asp-for="Phone" type="text" style="width: 15em; padding: 0.3em 0.3em 0.3em 0.3em; background: white;" class="BlueTextBox" value="@Model.Phone" />
+                        </div>
+                        <div style=" margin-bottom: 1em;">
+                            <label class="InputLabel">Position: </label>
+                            <input name="Position.Name" asp-for="Position.Name" type="text" style="width: 15em; padding: 0.3em 0.3em 0.3em 0.3em; background: white;" class="BlueTextBox" value="@Model.Position.Name" />
+                        </div>
+
+                    </div>
+
+                    @* <div style="display: flex; flex-direction: column; width: 23em; padding: 1em 0em 0em 0.5em;">
+                        
+                    </div> *@
+
+                </div>
+
+                <div id="failMessage" class="invisible" style="color: red; font-size:1.3em;">Не удалось сохранить изменения</div>
+                <div id="successMessage" class="invisible" style="color: green; font-size:1.3em;">Успешно сохранено</div>
+
+                <input id="btnOk" style="" class="btn btn-primary btnReport" type="submit" value="Сохранить" />
+                <button id="btning" class="btn btn-primary invisible" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Загрузка...
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+<script>
+
+    $('#employeeForm').submit(function (event) {
+
+        $('#btnOk').addClass('invisible');
+        $('#btning').removeClass('invisible');
+        event.preventDefault();
+
+        var Result = $.ajax({
+            url: '/Staff/Update',
+            data: $("#employeeForm").serialize(),
+            type: 'UPDATE'
+        });
+
+        Result.done(function (data) {
+            $('#failMessage').addClass('invisible');
+            $('#successMessage').removeClass('invisible');
+
+            $('#btnOk').removeClass('invisible');
+            $('#btning').addClass('invisible');
+        });
+
+        Result.fail(function (data) {
+            console.log('JSON failed');
+            $('#failMessage').removeClass('invisible');
+            $('#successMessage').addClass('invisible');
+            $('#btnOk').removeClass('invisible');
+            $('#btning').addClass('invisible');
+        });
+    });
+
+</script>

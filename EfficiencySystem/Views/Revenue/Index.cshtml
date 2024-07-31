@@ -1,0 +1,101 @@
+﻿@using EfficiencySystem.Models.ViewModels
+@using EfficiencySystem.Models
+@using System
+@model EfficiencySystem.Models.ViewModels.RevenueViewModel
+
+@{
+    ViewData["Title"] = "Revenue";
+    int ChartCounter = 0;
+}
+
+<div class="vertivalFlexContainer">
+
+    <div class="pageHeader">
+        <div><h3 style="">Revenue</h3></div>
+
+        <div class="filtersContainer">
+            <form asp-controller="Revenue" asp-action="Index" method="get" class="filtersForm">
+
+                <div style="">
+                    <span class="InputLabel">From</span>
+                    <input id="DateFirst" asp-for="DateFirst" class="DateTimeInput" type="date" value="@Model.DateFirst.ToString("yyyy-MM-dd")">
+                    <span class="InputLabel">to</span>
+                    <input id="DateSecond" asp-for="DateSecond" class="DateTimeInput" type="date" value="@Model.DateSecond.ToString("yyyy-MM-dd")">
+
+                </div>
+
+                <div style="align-self: center; margin-left: 1em;">
+                    <input id="btnOk" class="btn btn-primary btnReport" type="submit" value="Ok" />
+                    <button id="btning" class="btn btn-primary invisible btnReport" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Downloading...
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="" style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 1em;">
+
+        <table border="1" class="RevenueTable" style="max-width: 90%; min-width: 90%;">
+           
+            <tr>
+                <th>Restaurant</th>
+                <th>Date</th>
+                <th>Orders count</th>
+                <th>Revenue sum</th>
+                <th>Average bill</th>
+            </tr>
+            
+            @foreach(var item in Model.Revenues)
+            {
+                <tr>
+                    @if (item.Restaurant == null)
+                    {
+                        <td> </td>
+                    }
+                    else
+                    {
+                        <td>@item.Restaurant.Name</td>
+                    }
+
+                    <td>@item.Date.ToString("yyyy-MM-dd")</td>
+                    <td>@item.OrdersCount</td>
+                    <td>@item.RevenueSum</td>
+                    <td>@item.AverageBill</td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+
+</div>
+
+<style>
+    .RevenueTable {
+        margin: 1em 0em 3em 0em;
+    }
+
+        .RevenueTable th {
+            border: 1px lightgray solid;
+            padding: 0.5em 0.5em 0.5em 0.5em;
+        }
+
+        .RevenueTable td {
+            border: 1px lightgray solid;
+            padding: 0.5em 0.5em 0.5em 0.5em;
+        }
+</style>
+
+<script charset="utf-8">
+
+    $('#btnOk').click(
+        function (e) {
+            $(this).addClass('invisible');
+            $('#btning').removeClass('invisible');
+        }
+    );
+
+</script>

@@ -1,0 +1,1160 @@
+2024-07-26 22:42:55 [Information] Now listening on: http://localhost:5254 
+2024-07-26 22:42:55 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 22:42:55 [Information] Hosting environment: Development 
+2024-07-26 22:42:55 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 22:42:57 [Information] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 22:42:57 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 22:43:08 [Information] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-26 22:43:11 [Error] Failed executing DbCommand (7ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `staff` SET `department_id` = @p0, `deleted` = @p1, `last_name` = @p2, `name` = @p3, `phone` = @p4, `position_id` = @p5
+WHERE `id` = @p6;
+SELECT ROW_COUNT(); 
+2024-07-26 22:43:11 [Error] An exception occurred in the database while saving changes for context type 'EfficiencySystem.Models.MainDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Column 'last_name' cannot be null
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken) 
+2024-07-26 22:43:12 [Error] An unhandled exception has occurred while executing the request. 
+2024-07-26 22:43:55 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 22:43:55 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 22:44:02 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 22:44:02 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 22:44:31 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 22:44:31 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 22:44:33 [Information] Executed DbCommand (2ms) [Parameters=[@__departmentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) AND (`s`.`department_id` = @__departmentId_0) 
+2024-07-26 22:44:33 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 22:44:34 [Information] Executed DbCommand (2ms) [Parameters=[@__departmentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) AND (`s`.`department_id` = @__departmentId_0) 
+2024-07-26 22:44:34 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 22:44:36 [Information] Executed DbCommand (2ms) [Parameters=[@__departmentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) AND (`s`.`department_id` = @__departmentId_0) 
+2024-07-26 22:44:36 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 22:44:40 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 22:44:40 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 22:45:38 [Information] Now listening on: http://localhost:5254 
+2024-07-26 22:45:38 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 22:45:38 [Information] Hosting environment: Development 
+2024-07-26 22:45:38 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 22:45:40 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 22:45:40 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 22:45:46 [Information] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-26 22:46:10 [Information] Now listening on: http://localhost:5254 
+2024-07-26 22:46:10 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 22:46:10 [Information] Hosting environment: Development 
+2024-07-26 22:46:10 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 22:46:12 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 22:46:12 [Information] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 22:46:17 [Information] Executed DbCommand (17ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-26 22:51:53 [Information] Executed DbCommand (1ms) [Parameters=[@__login_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`id`, `u`.`login`, `u`.`name`, `u`.`password`, `u`.`role`
+FROM `users` AS `u`
+WHERE (`u`.`login` = @__login_0) AND (`u`.`password` = @__password_1)
+LIMIT 1 
+2024-07-26 22:54:46 [Information] Now listening on: http://localhost:5254 
+2024-07-26 22:54:46 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 22:54:46 [Information] Hosting environment: Development 
+2024-07-26 22:54:46 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 22:54:48 [Information] Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 22:54:48 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 22:55:03 [Information] Executed DbCommand (15ms) [Parameters=[@__login_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`id`, `u`.`login`, `u`.`name`, `u`.`password`, `u`.`role`
+FROM `users` AS `u`
+WHERE (`u`.`login` = @__login_0) AND (`u`.`password` = @__password_1)
+LIMIT 1 
+2024-07-26 22:55:22 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 22:55:22 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:02:12 [Information] Now listening on: http://localhost:5254 
+2024-07-26 23:02:12 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 23:02:12 [Information] Hosting environment: Development 
+2024-07-26 23:02:12 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 23:02:14 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:02:14 [Information] Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:02:55 [Information] Executed DbCommand (23ms) [Parameters=[@__login_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`id`, `u`.`login`, `u`.`name`, `u`.`password`, `u`.`role`
+FROM `users` AS `u`
+WHERE (`u`.`login` = @__login_0) AND (`u`.`password` = @__password_1)
+LIMIT 1 
+2024-07-26 23:03:15 [Information] Now listening on: http://localhost:5254 
+2024-07-26 23:03:15 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 23:03:15 [Information] Hosting environment: Development 
+2024-07-26 23:03:15 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 23:03:17 [Information] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:03:17 [Information] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:03:38 [Information] Executed DbCommand (16ms) [Parameters=[@__login_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`id`, `u`.`login`, `u`.`name`, `u`.`password`, `u`.`role`
+FROM `users` AS `u`
+WHERE (`u`.`login` = @__login_0) AND (`u`.`password` = @__password_1)
+LIMIT 1 
+2024-07-26 23:03:40 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:03:40 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:05:03 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:05:03 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:06:46 [Information] Now listening on: http://localhost:5254 
+2024-07-26 23:06:46 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 23:06:46 [Information] Hosting environment: Development 
+2024-07-26 23:06:46 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 23:06:48 [Information] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:06:48 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:07:14 [Information] Executed DbCommand (17ms) [Parameters=[@__login_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`id`, `u`.`login`, `u`.`name`, `u`.`password`, `u`.`role`
+FROM `users` AS `u`
+WHERE (`u`.`login` = @__login_0) AND (`u`.`password` = @__password_1)
+LIMIT 1 
+2024-07-26 23:07:14 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:07:14 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:12:45 [Information] Now listening on: http://localhost:5254 
+2024-07-26 23:12:45 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 23:12:45 [Information] Hosting environment: Development 
+2024-07-26 23:12:45 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 23:12:47 [Information] Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:12:47 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:32:07 [Information] Now listening on: http://localhost:5254 
+2024-07-26 23:32:07 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 23:32:07 [Information] Hosting environment: Development 
+2024-07-26 23:32:07 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 23:32:09 [Information] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:32:09 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:32:40 [Information] Executed DbCommand (15ms) [Parameters=[@__login_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`id`, `u`.`login`, `u`.`name`, `u`.`password`, `u`.`role`
+FROM `users` AS `u`
+WHERE (`u`.`login` = @__login_0) AND (`u`.`password` = @__password_1)
+LIMIT 1 
+2024-07-26 23:32:41 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:32:41 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:32:47 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:32:47 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:32:59 [Information] Executed DbCommand (2ms) [Parameters=[@__login_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`id`, `u`.`login`, `u`.`name`, `u`.`password`, `u`.`role`
+FROM `users` AS `u`
+WHERE (`u`.`login` = @__login_0) AND (`u`.`password` = @__password_1)
+LIMIT 1 
+2024-07-26 23:32:59 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:32:59 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:33:06 [Information] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-26 23:33:11 [Information] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-26 23:35:41 [Information] Now listening on: http://localhost:5254 
+2024-07-26 23:35:41 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 23:35:41 [Information] Hosting environment: Development 
+2024-07-26 23:35:41 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 23:35:43 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:35:43 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:35:54 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:35:54 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:35:57 [Information] Executed DbCommand (17ms) [Parameters=[@__login_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`id`, `u`.`login`, `u`.`name`, `u`.`password`, `u`.`role`
+FROM `users` AS `u`
+WHERE (`u`.`login` = @__login_0) AND (`u`.`password` = @__password_1)
+LIMIT 1 
+2024-07-26 23:35:57 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:35:57 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:35:59 [Information] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-26 23:36:12 [Error] Failed executing DbCommand (7ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `staff` SET `department_id` = @p0, `deleted` = @p1, `last_name` = @p2, `name` = @p3, `phone` = @p4, `position_id` = @p5
+WHERE `id` = @p6;
+SELECT ROW_COUNT(); 
+2024-07-26 23:36:12 [Error] An exception occurred in the database while saving changes for context type 'EfficiencySystem.Models.MainDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Column 'last_name' cannot be null
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken) 
+2024-07-26 23:36:12 [Error] An unhandled exception has occurred while executing the request. 
+2024-07-26 23:36:35 [Information] Now listening on: http://localhost:5254 
+2024-07-26 23:36:35 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 23:36:35 [Information] Hosting environment: Development 
+2024-07-26 23:36:35 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 23:36:37 [Information] Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:36:37 [Information] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:36:44 [Information] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-26 23:50:18 [Information] Now listening on: http://localhost:5254 
+2024-07-26 23:50:18 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 23:50:18 [Information] Hosting environment: Development 
+2024-07-26 23:50:18 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 23:50:19 [Information] Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:50:19 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:50:24 [Information] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-26 23:50:56 [Information] Now listening on: http://localhost:5254 
+2024-07-26 23:50:56 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 23:50:56 [Information] Hosting environment: Development 
+2024-07-26 23:50:56 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 23:50:57 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:50:57 [Information] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:51:02 [Information] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-26 23:57:46 [Information] Now listening on: http://localhost:5254 
+2024-07-26 23:57:46 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 23:57:46 [Information] Hosting environment: Development 
+2024-07-26 23:57:46 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 23:57:48 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:57:48 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:57:59 [Information] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-26 23:58:07 [Error] Failed executing DbCommand (7ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `staff` SET `department_id` = @p0, `deleted` = @p1, `last_name` = @p2, `name` = @p3, `phone` = @p4, `position_id` = @p5
+WHERE `id` = @p6;
+SELECT ROW_COUNT(); 
+2024-07-26 23:58:07 [Error] An exception occurred in the database while saving changes for context type 'EfficiencySystem.Models.MainDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Column 'last_name' cannot be null
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken) 
+2024-07-26 23:58:07 [Error] An unhandled exception has occurred while executing the request. 
+2024-07-26 23:58:15 [Information] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-26 23:58:48 [Information] Now listening on: http://localhost:5254 
+2024-07-26 23:58:48 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-26 23:58:48 [Information] Hosting environment: Development 
+2024-07-26 23:58:48 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-26 23:58:49 [Information] Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:58:49 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:58:57 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-26 23:58:57 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-26 23:59:01 [Information] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-27 00:00:21 [Information] Now listening on: http://localhost:5254 
+2024-07-27 00:00:21 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 00:00:21 [Information] Hosting environment: Development 
+2024-07-27 00:00:21 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 00:00:23 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 00:00:23 [Information] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 00:00:28 [Information] Executed DbCommand (17ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-07-27 00:13:08 [Information] Now listening on: http://localhost:5254 
+2024-07-27 00:13:08 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 00:13:08 [Information] Hosting environment: Development 
+2024-07-27 00:13:08 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 00:13:09 [Information] Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 00:13:09 [Information] Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 00:13:18 [Information] Executed DbCommand (20ms) [Parameters=[@__departmentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) AND (`s`.`department_id` = @__departmentId_0) 
+2024-07-27 00:13:18 [Information] Executed DbCommand (19ms) [Parameters=[@__employeeId_0='?' (DbType = Int32), @__dateFirst_1='?' (DbType = DateTime), @__dateSecond_2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`date`, `w`.`restaurant_id`, `w`.`staff_id`, `w`.`time_finish`, `w`.`time_start`, `r`.`id`, `r`.`address`, `r`.`name`, `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`
+FROM `work_shift` AS `w`
+INNER JOIN `restaurant` AS `r` ON `w`.`restaurant_id` = `r`.`id`
+INNER JOIN `staff` AS `s` ON `w`.`staff_id` = `s`.`id`
+WHERE ((`w`.`staff_id` = @__employeeId_0) AND (`w`.`date` >= @__dateFirst_1)) AND (`w`.`date` <= @__dateSecond_2) 
+2024-07-27 00:13:18 [Information] Executed DbCommand (2ms) [Parameters=[@__positionId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`duration`, `w`.`position_id`
+FROM `workshift_durations` AS `w`
+WHERE `w`.`position_id` = @__positionId_0
+LIMIT 1 
+2024-07-27 00:13:18 [Error] An unhandled exception has occurred while executing the request. 
+2024-07-27 00:43:23 [Information] Now listening on: http://localhost:5254 
+2024-07-27 00:43:23 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 00:43:23 [Information] Hosting environment: Development 
+2024-07-27 00:43:23 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 00:43:25 [Information] Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 00:43:25 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 00:43:39 [Information] Executed DbCommand (35ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 00:43:39 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 00:46:14 [Information] Executed DbCommand (2ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 00:46:14 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 00:47:12 [Information] Executed DbCommand (6ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 00:47:12 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 00:47:48 [Information] Executed DbCommand (2ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 00:47:48 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 00:47:56 [Information] Executed DbCommand (2ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 00:47:56 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 00:48:36 [Information] Now listening on: http://localhost:5254 
+2024-07-27 00:48:36 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 00:48:36 [Information] Hosting environment: Development 
+2024-07-27 00:48:36 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 00:48:38 [Information] Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 00:48:38 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 00:49:33 [Information] Now listening on: http://localhost:5254 
+2024-07-27 00:49:33 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 00:49:33 [Information] Hosting environment: Development 
+2024-07-27 00:49:33 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 00:49:34 [Information] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 00:49:34 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 00:49:40 [Information] Executed DbCommand (19ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 00:49:40 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 00:50:02 [Information] Executed DbCommand (1ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 00:50:02 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 00:50:18 [Information] Executed DbCommand (2ms) [Parameters=[@__login_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`id`, `u`.`login`, `u`.`name`, `u`.`password`, `u`.`role`
+FROM `users` AS `u`
+WHERE (`u`.`login` = @__login_0) AND (`u`.`password` = @__password_1)
+LIMIT 1 
+2024-07-27 00:50:18 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 00:50:18 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 00:50:22 [Information] Executed DbCommand (2ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 00:50:22 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:02:30 [Information] Executed DbCommand (2ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 01:02:30 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:03:18 [Information] Now listening on: http://localhost:5254 
+2024-07-27 01:03:18 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 01:03:18 [Information] Hosting environment: Development 
+2024-07-27 01:03:18 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 01:03:20 [Information] Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 01:03:20 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 01:03:27 [Information] Executed DbCommand (19ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 01:03:27 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:03:54 [Information] Executed DbCommand (1ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 01:03:54 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:04:44 [Information] Now listening on: http://localhost:5254 
+2024-07-27 01:04:44 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 01:04:44 [Information] Hosting environment: Development 
+2024-07-27 01:04:44 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 01:04:45 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 01:04:46 [Information] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 01:04:51 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 01:04:51 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 01:04:55 [Information] Executed DbCommand (21ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 01:04:55 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:05:08 [Information] Executed DbCommand (2ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime), @__restaurantId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE ((`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)) AND (`o`.`restaurant_id` = @__restaurantId_2)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 01:05:08 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:05:10 [Information] Executed DbCommand (2ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime), @__restaurantId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE ((`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)) AND (`o`.`restaurant_id` = @__restaurantId_2)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 01:05:10 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:05:15 [Information] Executed DbCommand (2ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime), @__restaurantId_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE ((`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)) AND (`o`.`restaurant_id` = @__restaurantId_2)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 01:05:15 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:05:19 [Information] Executed DbCommand (7ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 01:05:19 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:08:44 [Information] Executed DbCommand (2ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 01:08:44 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:40:28 [Information] Now listening on: http://localhost:5254 
+2024-07-27 01:40:28 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 01:40:28 [Information] Hosting environment: Development 
+2024-07-27 01:40:28 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 01:40:30 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 01:40:30 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 01:40:41 [Information] Executed DbCommand (29ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`date`, `r`.`orders_count`, `r`.`restaurant_id`, `r`.`revenue`, `r0`.`id`, `r0`.`address`, `r0`.`name`
+FROM `revenues` AS `r`
+INNER JOIN `restaurant` AS `r0` ON `r`.`restaurant_id` = `r0`.`id`
+WHERE (`r`.`date` >= @__dateFirst_0) AND (`r`.`date` <= @__dateSecond_1) 
+2024-07-27 01:41:42 [Information] Executed DbCommand (2ms) [Parameters=[@__departmentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) AND (`s`.`department_id` = @__departmentId_0) 
+2024-07-27 01:41:42 [Information] Executed DbCommand (1ms) [Parameters=[@__employeeId_0='?' (DbType = Int32), @__dateFirst_1='?' (DbType = DateTime), @__dateSecond_2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`date`, `w`.`restaurant_id`, `w`.`staff_id`, `w`.`time_finish`, `w`.`time_start`, `r`.`id`, `r`.`address`, `r`.`name`, `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`
+FROM `work_shift` AS `w`
+INNER JOIN `restaurant` AS `r` ON `w`.`restaurant_id` = `r`.`id`
+INNER JOIN `staff` AS `s` ON `w`.`staff_id` = `s`.`id`
+WHERE ((`w`.`staff_id` = @__employeeId_0) AND (`w`.`date` >= @__dateFirst_1)) AND (`w`.`date` <= @__dateSecond_2) 
+2024-07-27 01:41:42 [Information] Executed DbCommand (1ms) [Parameters=[@__positionId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`duration`, `w`.`position_id`
+FROM `workshift_durations` AS `w`
+WHERE `w`.`position_id` = @__positionId_0
+LIMIT 1 
+2024-07-27 01:41:42 [Error] An unhandled exception has occurred while executing the request. 
+2024-07-27 01:42:55 [Information] Executed DbCommand (1ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`date`, `r`.`orders_count`, `r`.`restaurant_id`, `r`.`revenue`, `r0`.`id`, `r0`.`address`, `r0`.`name`
+FROM `revenues` AS `r`
+INNER JOIN `restaurant` AS `r0` ON `r`.`restaurant_id` = `r0`.`id`
+WHERE (`r`.`date` >= @__dateFirst_0) AND (`r`.`date` <= @__dateSecond_1) 
+2024-07-27 01:43:37 [Information] Executed DbCommand (2ms) [Parameters=[@__departmentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) AND (`s`.`department_id` = @__departmentId_0) 
+2024-07-27 01:43:37 [Information] Executed DbCommand (1ms) [Parameters=[@__employeeId_0='?' (DbType = Int32), @__dateFirst_1='?' (DbType = DateTime), @__dateSecond_2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`date`, `w`.`restaurant_id`, `w`.`staff_id`, `w`.`time_finish`, `w`.`time_start`, `r`.`id`, `r`.`address`, `r`.`name`, `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`
+FROM `work_shift` AS `w`
+INNER JOIN `restaurant` AS `r` ON `w`.`restaurant_id` = `r`.`id`
+INNER JOIN `staff` AS `s` ON `w`.`staff_id` = `s`.`id`
+WHERE ((`w`.`staff_id` = @__employeeId_0) AND (`w`.`date` >= @__dateFirst_1)) AND (`w`.`date` <= @__dateSecond_2) 
+2024-07-27 01:43:37 [Information] Executed DbCommand (1ms) [Parameters=[@__positionId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`duration`, `w`.`position_id`
+FROM `workshift_durations` AS `w`
+WHERE `w`.`position_id` = @__positionId_0
+LIMIT 1 
+2024-07-27 01:43:37 [Error] An unhandled exception has occurred while executing the request. 
+2024-07-27 01:43:51 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 01:43:51 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 01:43:53 [Information] Executed DbCommand (12ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 01:43:53 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:44:11 [Information] Executed DbCommand (2ms) [Parameters=[@__departmentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) AND (`s`.`department_id` = @__departmentId_0) 
+2024-07-27 01:44:11 [Information] Executed DbCommand (1ms) [Parameters=[@__employeeId_0='?' (DbType = Int32), @__dateFirst_1='?' (DbType = DateTime), @__dateSecond_2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`date`, `w`.`restaurant_id`, `w`.`staff_id`, `w`.`time_finish`, `w`.`time_start`, `r`.`id`, `r`.`address`, `r`.`name`, `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`
+FROM `work_shift` AS `w`
+INNER JOIN `restaurant` AS `r` ON `w`.`restaurant_id` = `r`.`id`
+INNER JOIN `staff` AS `s` ON `w`.`staff_id` = `s`.`id`
+WHERE ((`w`.`staff_id` = @__employeeId_0) AND (`w`.`date` >= @__dateFirst_1)) AND (`w`.`date` <= @__dateSecond_2) 
+2024-07-27 01:44:11 [Information] Executed DbCommand (1ms) [Parameters=[@__positionId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`duration`, `w`.`position_id`
+FROM `workshift_durations` AS `w`
+WHERE `w`.`position_id` = @__positionId_0
+LIMIT 1 
+2024-07-27 01:44:11 [Error] An unhandled exception has occurred while executing the request. 
+2024-07-27 01:47:27 [Information] Now listening on: http://localhost:5254 
+2024-07-27 01:47:27 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 01:47:27 [Information] Hosting environment: Development 
+2024-07-27 01:47:27 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 01:47:28 [Information] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 01:47:28 [Information] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 01:47:34 [Information] Executed DbCommand (17ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 01:47:34 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 01:48:14 [Information] Executed DbCommand (16ms) [Parameters=[@__departmentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) AND (`s`.`department_id` = @__departmentId_0) 
+2024-07-27 01:48:26 [Information] Executed DbCommand (2ms) [Parameters=[@__employeeId_0='?' (DbType = Int32), @__dateFirst_1='?' (DbType = DateTime), @__dateSecond_2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`date`, `w`.`restaurant_id`, `w`.`staff_id`, `w`.`time_finish`, `w`.`time_start`, `r`.`id`, `r`.`address`, `r`.`name`, `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`
+FROM `work_shift` AS `w`
+INNER JOIN `restaurant` AS `r` ON `w`.`restaurant_id` = `r`.`id`
+INNER JOIN `staff` AS `s` ON `w`.`staff_id` = `s`.`id`
+WHERE ((`w`.`staff_id` = @__employeeId_0) AND (`w`.`date` >= @__dateFirst_1)) AND (`w`.`date` <= @__dateSecond_2) 
+2024-07-27 01:48:39 [Information] Executed DbCommand (1ms) [Parameters=[@__positionId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`duration`, `w`.`position_id`
+FROM `workshift_durations` AS `w`
+WHERE `w`.`position_id` = @__positionId_0
+LIMIT 1 
+2024-07-27 01:48:39 [Error] An unhandled exception has occurred while executing the request. 
+2024-07-27 01:49:21 [Information] Executed DbCommand (2ms) [Parameters=[@__departmentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) AND (`s`.`department_id` = @__departmentId_0) 
+2024-07-27 01:49:21 [Information] Executed DbCommand (1ms) [Parameters=[@__employeeId_0='?' (DbType = Int32), @__dateFirst_1='?' (DbType = DateTime), @__dateSecond_2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`date`, `w`.`restaurant_id`, `w`.`staff_id`, `w`.`time_finish`, `w`.`time_start`, `r`.`id`, `r`.`address`, `r`.`name`, `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`
+FROM `work_shift` AS `w`
+INNER JOIN `restaurant` AS `r` ON `w`.`restaurant_id` = `r`.`id`
+INNER JOIN `staff` AS `s` ON `w`.`staff_id` = `s`.`id`
+WHERE ((`w`.`staff_id` = @__employeeId_0) AND (`w`.`date` >= @__dateFirst_1)) AND (`w`.`date` <= @__dateSecond_2) 
+2024-07-27 01:53:52 [Information] Now listening on: http://localhost:5254 
+2024-07-27 01:53:52 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 01:53:52 [Information] Hosting environment: Development 
+2024-07-27 01:53:52 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 01:53:54 [Information] Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 01:53:54 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 01:54:03 [Information] Executed DbCommand (17ms) [Parameters=[@__departmentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) AND (`s`.`department_id` = @__departmentId_0) 
+2024-07-27 01:54:03 [Information] Executed DbCommand (4ms) [Parameters=[@__employeeId_0='?' (DbType = Int32), @__dateFirst_1='?' (DbType = DateTime), @__dateSecond_2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`date`, `w`.`restaurant_id`, `w`.`staff_id`, `w`.`time_finish`, `w`.`time_start`, `r`.`id`, `r`.`address`, `r`.`name`, `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`
+FROM `work_shift` AS `w`
+INNER JOIN `restaurant` AS `r` ON `w`.`restaurant_id` = `r`.`id`
+INNER JOIN `staff` AS `s` ON `w`.`staff_id` = `s`.`id`
+WHERE ((`w`.`staff_id` = @__employeeId_0) AND (`w`.`date` >= @__dateFirst_1)) AND (`w`.`date` <= @__dateSecond_2) 
+2024-07-27 01:54:04 [Information] Executed DbCommand (1ms) [Parameters=[@__positionId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`duration`, `w`.`position_id`
+FROM `workshift_durations` AS `w`
+WHERE `w`.`position_id` = @__positionId_0
+LIMIT 1 
+2024-07-27 01:54:04 [Error] An unhandled exception has occurred while executing the request. 
+2024-07-27 02:29:41 [Information] Now listening on: http://localhost:5254 
+2024-07-27 02:29:41 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 02:29:41 [Information] Hosting environment: Development 
+2024-07-27 02:29:41 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 02:29:43 [Information] Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 02:29:43 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 02:30:39 [Information] Now listening on: http://localhost:5254 
+2024-07-27 02:30:39 [Information] Application started. Press Ctrl+C to shut down. 
+2024-07-27 02:30:39 [Information] Hosting environment: Development 
+2024-07-27 02:30:39 [Information] Content root path: A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem 
+2024-07-27 02:30:41 [Information] Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 02:30:41 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 02:30:51 [Information] Executed DbCommand (30ms) [Parameters=[@__restaurantId_0='?' (DbType = Int32), @__dateFirst_1='?' (DbType = DateTime), @__dateSecond_2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`date`, `w`.`restaurant_id`, `w`.`staff_id`, `w`.`time_finish`, `w`.`time_start`, `r`.`id`, `r`.`address`, `r`.`name`, `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`
+FROM `work_shift` AS `w`
+INNER JOIN `restaurant` AS `r` ON `w`.`restaurant_id` = `r`.`id`
+INNER JOIN `staff` AS `s` ON `w`.`staff_id` = `s`.`id`
+WHERE ((`w`.`restaurant_id` = @__restaurantId_0) AND (`w`.`date` >= @__dateFirst_1)) AND (`w`.`date` <= @__dateSecond_2) 
+2024-07-27 02:30:51 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 02:57:23 [Information] Executed DbCommand (10ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`date`, `r`.`orders_count`, `r`.`restaurant_id`, `r`.`revenue`, `r0`.`id`, `r0`.`address`, `r0`.`name`
+FROM `revenues` AS `r`
+INNER JOIN `restaurant` AS `r0` ON `r`.`restaurant_id` = `r0`.`id`
+WHERE (`r`.`date` >= @__dateFirst_0) AND (`r`.`date` <= @__dateSecond_1) 
+2024-07-27 02:57:28 [Information] Executed DbCommand (2ms) [Parameters=[@__dateFirst_0='?' (DbType = DateTime), @__dateSecond_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `o`.`id`, `o`.`date`, `o`.`discount`, `o`.`email`, `o`.`phone`, `o`.`restaurant_id`, `o`.`sum`, `o`.`time_pay`, `o`.`time_rejected`, `o`.`type_id`, `r`.`id`, `r`.`address`, `r`.`name`, `o0`.`id`, `o0`.`name`, `o1`.`id`, `o1`.`good_id`, `o1`.`order_id`
+FROM `orders` AS `o`
+INNER JOIN `restaurant` AS `r` ON `o`.`restaurant_id` = `r`.`id`
+INNER JOIN `order_types` AS `o0` ON `o`.`type_id` = `o0`.`id`
+LEFT JOIN `order_items` AS `o1` ON `o`.`id` = `o1`.`order_id`
+WHERE (`o`.`date` >= @__dateFirst_0) AND (`o`.`date` <= @__dateSecond_1)
+ORDER BY `o`.`id`, `r`.`id`, `o0`.`id` 
+2024-07-27 02:57:28 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 02:57:34 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 02:57:35 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-07-27 02:57:55 [Information] Executed DbCommand (1ms) [Parameters=[@__departmentId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) AND (`s`.`department_id` = @__departmentId_0) 
+2024-07-27 02:57:55 [Information] Executed DbCommand (11ms) [Parameters=[@__employeeId_0='?' (DbType = Int32), @__dateFirst_1='?' (DbType = DateTime), @__dateSecond_2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`date`, `w`.`restaurant_id`, `w`.`staff_id`, `w`.`time_finish`, `w`.`time_start`, `r`.`id`, `r`.`address`, `r`.`name`, `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`
+FROM `work_shift` AS `w`
+INNER JOIN `restaurant` AS `r` ON `w`.`restaurant_id` = `r`.`id`
+INNER JOIN `staff` AS `s` ON `w`.`staff_id` = `s`.`id`
+WHERE ((`w`.`staff_id` = @__employeeId_0) AND (`w`.`date` >= @__dateFirst_1)) AND (`w`.`date` <= @__dateSecond_2) 
+2024-07-27 02:57:55 [Information] Executed DbCommand (1ms) [Parameters=[@__positionId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`duration`, `w`.`position_id`
+FROM `workshift_durations` AS `w`
+WHERE `w`.`position_id` = @__positionId_0
+LIMIT 1 
+2024-07-27 02:57:55 [Error] An unhandled exception has occurred while executing the request. 
+2024-07-27 02:58:02 [Information] Executed DbCommand (1ms) [Parameters=[@__restaurantId_0='?' (DbType = Int32), @__dateFirst_1='?' (DbType = DateTime), @__dateSecond_2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+SELECT `w`.`id`, `w`.`date`, `w`.`restaurant_id`, `w`.`staff_id`, `w`.`time_finish`, `w`.`time_start`, `r`.`id`, `r`.`address`, `r`.`name`, `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`
+FROM `work_shift` AS `w`
+INNER JOIN `restaurant` AS `r` ON `w`.`restaurant_id` = `r`.`id`
+INNER JOIN `staff` AS `s` ON `w`.`staff_id` = `s`.`id`
+WHERE ((`w`.`restaurant_id` = @__restaurantId_0) AND (`w`.`date` >= @__dateFirst_1)) AND (`w`.`date` <= @__dateSecond_2) 
+2024-07-27 02:58:02 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-07-27 02:58:07 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-07-27 02:58:07 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 

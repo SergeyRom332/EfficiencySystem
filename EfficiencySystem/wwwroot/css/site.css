@@ -1,0 +1,576 @@
+html {
+  /* font-size: 0.4em; */
+  font-size: 14px;
+}
+
+/* @media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+} */
+
+@media (max-width:590px) {
+  body {
+    font-size: 5px;
+  }
+
+  /* #header{
+    background-color: yellow;
+  } */
+  
+  .ordersSourceChartsContainer{
+    width: 90%; 
+    margin-top: 3em; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+  }
+}
+/* and (max-width:999px) */
+@media (min-width: 591px) and (max-width:1000px)  {
+  body {
+    font-size: 7px;
+  }
+
+  /* #header{
+    background-color: green;
+  } */
+}
+
+@media (min-width:1000px) and (max-width:1599px) {
+  body {
+    font-size: 12px;
+  }
+
+  /* #header{
+    background-color: blue;
+  } */
+}
+
+@media (min-width:1599px) {
+  body {
+    font-size: 15px;
+  }
+
+  /* #header{
+    background-color: purple;
+  } */
+}
+
+/* html {
+  position: relative; 
+  min-height: 100%;
+} */
+
+body {
+  margin-bottom: 60px;
+}
+
+.invisible{
+  display: none;
+}
+
+.pinkBackGround{
+  background: #EA0371;
+}
+
+#header{
+  height:3em; 
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: center; 
+  flex-shrink: 0;
+}
+
+#loginLabel{
+  /* box-shadow: 0px 0px 5px 0px #0D6EFD; */
+  padding: 0;
+  margin-right: 1em; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  border-radius: 30px 30px 30px 30px;
+  z-index: 3;
+  /* transition-property: width;
+  transition-duration: 0.5s; */
+  max-width: 3.3em;
+  /* height: 2.5em; */
+  transition-property: max-width;
+  transition-duration: 0.9s;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#loginLabel:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 3px 0px #0D6EFD;
+}
+
+#loginLabel a{
+  text-decoration: none;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: black;
+  padding: 0.4em 1em 0.4em 1em;
+}
+
+/* #loginLabel a:hover{
+  padding: 0.4em 1.3em 0.4em 1.3em;
+} */
+
+#loginLabelText{
+  width:100%; 
+  height:100%;
+}
+
+#mainMenuButton{
+  width: 2.3em; 
+  height: 2.3em; 
+  position: fixed; 
+  top: 0.5em; 
+  left: 1em;
+  transition-property: left;
+  transition-duration: 1s;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#mainMenuButton span:hover{
+  font-size:1.9em !important;
+}
+
+.mainMenuButtonActive{
+  left: 20em !important;
+}
+
+#mainMenu{
+  background: #1A1A1A;
+  width: 19em;
+  height: 100%;
+  position: static;
+  z-index: 999 !important;
+  position: fixed;
+  transition-property: width;
+  transition-duration: 1s;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.zeroWidth{
+  width: 0em !important;
+}
+
+.zeroHeight{
+  height: 0em !important;
+}
+
+.invisible{
+  display: none !important;
+}
+
+#mainMenuHeader{
+  width: 100%; 
+  height: 2.3em; 
+  flex-shrink: 0; 
+  font-size: 2em; 
+  padding: 0.2em 0em 0em 0.5em; 
+  color: #EA0371;
+}
+
+#mainMenuBody{
+  width: 100%; 
+  flex-grow: 1; 
+  list-style: none;
+  margin: 0em;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.MenuItem{
+  width: 100%;
+  height: 2.5em;
+  cursor: pointer;
+  color: lightgray;
+  font-size: 1.1em; 
+  padding: 0em 0em 0em 0em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.MenuItem:before{
+  content:'';
+  width: 100%;
+	position: absolute;
+	height: 42px;
+	background: #1A1A1A;
+	transition: all 0.4s ease;
+  z-index: 2;
+  right: 0;
+}
+
+.MenuItem:hover:before {
+	width: 0%;
+}
+
+.MenuItem a{
+  display: flex;
+  align-items: center;
+  width: 100%; 
+  height: 100%;
+  text-decoration: none;
+  padding: 0em 0em 0em 0.5em;
+  color: lightgray;
+  z-index: 3;
+}
+
+/* .MenuItem a:hover{
+  
+  background: #EA0371;
+} */
+
+.DropDownMenuItem{
+  font-size: 1.1em; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: lightgray;
+  padding: 0em 0em 0em 0em;
+  cursor: pointer;
+}
+
+.DropDownMenuItemHeader{
+  height: 2.5em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0em 0em 0em 0em;
+}
+
+.DropDownMenuItemHeader:before{
+  content:'';
+  width: 100%;
+	position: absolute;
+	height: 42px;
+	background: #1A1A1A;
+	transition: all 0.4s ease;
+  z-index: 2;
+  right: 0;
+}
+
+.DropDownMenuItemHeader:hover:before {
+	width: 0%;
+}
+
+.DropDownMenuItemHeader span{
+  padding: 0em 0em 0em 0.5em;
+  z-index: 3;
+}
+
+/* .DropDownMenuItemHeader:hover{
+  background: #EA0371;
+} */
+
+.DropDownMenuItemHeader:after {
+  content: '▼';
+  font-size: 0.5em;
+  color: lightgray;
+  margin-left: 0.9em;
+  z-index: 3;
+}
+
+.arrowUp:after {
+  content: "▲";
+  font-size: 0.5em;
+  color: lightgray;
+  margin-left: 0.9em;
+}
+
+.DropDownMenuItemBody{
+  padding: 0;
+  width: 100%;
+  overflow: hidden; 
+  max-height: 0;
+  transition-property: max-height;
+  transition-duration: 0.9s;
+}
+
+.DropDownMenuSubItem{
+  font-size: 0.95em; 
+  width: 100%;
+  height: 2.3em;
+  cursor: pointer;
+  color: lightgray;
+  padding: 0em 0em 0em 0em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.DropDownMenuSubItem a{
+  display: flex;
+  align-items: center;
+  width: 100%; 
+  height: 100%;
+  text-decoration: none;
+  padding: 0em 0em 0em 2em;
+  color: lightgray;
+}
+
+.DropDownMenuSubItem a:hover{
+  background: #313131;
+}
+
+/* input[type=date]::-webkit-calendar-picker-indicator {
+  background: white;
+  border-radius: 15px;
+  width: 0.6em;
+  height: 0.6em;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator:hover {
+  width: 0.7em;
+  height: 0.7em;
+} */
+
+.DateTimeInput {
+
+  border-radius: 5px;
+  width: 10em;
+  height: 2em;
+  border-width: 1px;
+  border-color: lightgray;
+  padding-left: 9px;
+  background: #E8EDFF;
+}
+
+.InputLabel{
+  padding: 0em 0.3em 0em 0.4em; 
+  font-size: 1.1em;
+}
+
+.btnReport{
+  font-size: inherit; 
+  width: 7em; 
+  height: 2em; 
+  padding: 0.15em 1em 0.15em 1em;
+}
+
+.btnDownload{
+  font-size: inherit; 
+  width: 8.3em; 
+  height: 2.5em;
+  padding: 0.15em 1em 0.15em 1em;
+}
+
+.SelectInput {
+
+  border-radius: 5px;
+  height: 2em; 
+  min-width: 9em; 
+  background: #E8EDFF;
+}
+
+.vertivalFlexContainer{
+  display: flex; 
+  flex-direction: column; 
+  width: 100%; 
+  height: 100%;
+}
+
+.pageHeader{
+  display: flex; 
+  flex-direction: column; 
+  width: 100%; 
+  padding: 3em 0em 0em 5%;
+}
+
+.filtersContainer{
+  width: 100%; 
+  margin-top: 1em;
+}
+
+.filtersForm{
+  width: 100%; 
+  display: flex;
+}
+
+.ordersSourceChartsContainer{
+  width: 90%; 
+  margin-top: 3em; 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
+.BlueTextBox {
+  width: 9em;
+  background: #E8EDFF;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: 1px solid #363535;
+}
+
+.BlueNud {
+  width: 5em;
+  background: #E8EDFF;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: 1px solid #363535;
+}
+
+.checkbox {
+  vertical-align: top;
+  margin: 0 3px 0 0;
+  width: 17px;
+  height: 17px;
+}
+
+  .checkbox + label {
+      cursor: pointer;
+  }
+
+  .checkbox:not(checked) {
+      position: absolute;
+      opacity: 0;
+  }
+
+      .checkbox:not(checked) + label {
+          position: relative; /* будем позиционировать псевдочекбокс относительно label */
+          padding: 0 0 0 60px; /* оставляем слева от label место под псевдочекбокс */
+      }
+
+          .checkbox:not(checked) + label:before {
+              content: '';
+              position: absolute;
+              top: -4px;
+              left: 0;
+              width: 50px;
+              height: 26px;
+              border-radius: 13px;
+              background: #CDD1DA;
+              box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+          }
+
+          .checkbox:not(checked) + label:after {
+              content: '';
+              position: absolute;
+              top: -2px;
+              left: 2px;
+              width: 22px;
+              height: 22px;
+              border-radius: 10px;
+              background: #FFF;
+              box-shadow: 0 2px 5px rgba(0,0,0,.3);
+              transition: all .2s;
+          }
+
+  .checkbox:checked + label:before {
+      background: #0D6EFD;
+  }
+
+  .checkbox:checked + label:after {
+      left: 26px;
+  }
+
+  /* .checkbox:focus + label:before {
+      box-shadow: 0 0 0 3px rgba(255,255,0,.5);
+  } */
+
+.BlueTable {
+  border-top: 1px solid black;
+  width:100%;
+  margin-bottom: 1em;
+  font-size: 0.99em;
+  border-collapse:collapse;
+}
+
+  .BlueTable th {
+      font-weight: normal;
+      color: #039;
+      padding: 10px 15px;
+      border-bottom: 1px solid black;
+  }
+
+  .BlueTable td {
+      color: #2B2F2E;
+      /* border-top: 1px solid #e8edff; */
+      padding: 10px 15px;
+  }
+
+  .BlueTable tr:nth-child(2n) {
+      background: #e8edff;
+  }
+
+  .BlueTable a {
+    text-decoration: none;
+  }
+
+.SelectableTable {
+  background: #0D6EFD;
+}
+
+  .SelectableTable tr {
+    background: white;
+  }
+
+  .SelectableTable tr:not(:first-child):hover{
+    color: white;
+    background: #0D6EFD;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 0px black;
+    transform: scale(1.015);
+  }
+
+  .SelectableTable tr:hover td{
+    color: inherit !important;
+  }
+
+  .SelectableTable tr:hover a{
+    color: inherit !important;
+  }
+
+.SelectableTableNotLastRow {
+  background: #0D6EFD;
+}
+
+  .SelectableTableNotLastRow tr {
+    background: white;
+  }
+
+  .SelectableTableNotLastRow tr:not(:first-child):not(:last-child):hover{
+    color: white;
+    background: #0D6EFD;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 0px black;
+    transform: scale(1.015);
+  }
+
+  .SelectableTableNotLastRow tr:not(:last-child):hover td{
+    color: inherit !important;
+  }
+
+  .SelectableTableNotLastRow tr:not(:last-child):hover a{
+    color: inherit !important;
+  }
+
+.RotationButton {
+  transition-duration: 0.5s;
+}
+
+  .RotationButton:hover {
+    transform: rotate(360deg);
+  }
+
+.lightBlueHover:hover{
+  background: #E8EDFF;
+}
+
