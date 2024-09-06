@@ -11,7 +11,7 @@ namespace EfficiencySystem.Models.Services
             _dbContext = dbContext;
         }
 
-        public async Task<List<Restaurant>> GetRestaurantAsync()
+        public async Task<List<Restaurant>> GetRestaurantsAsync()
         {
             return await _dbContext.Restaurants.ToListAsync();
         }
@@ -19,6 +19,11 @@ namespace EfficiencySystem.Models.Services
         public async Task<Restaurant> GetRestaurantAsync(int id)
         {
             return await _dbContext.Restaurants.FirstOrDefaultAsync(i => i.Id == id) ?? new Restaurant();
+        }
+
+        public List<Restaurant> GetRestaurants()
+        {
+            return _dbContext.Restaurants.ToList();
         }
     }
 

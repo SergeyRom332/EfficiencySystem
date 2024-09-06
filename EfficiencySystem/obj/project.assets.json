@@ -7837,11 +7837,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\EfficiencySystem.csproj",
+      "projectUniqueName": "A:\\Programming\\C#\\Projects\\git\\EfficiencySystem\\EfficiencySystem\\EfficiencySystem.csproj",
       "projectName": "EfficiencySystem",
-      "projectPath": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\EfficiencySystem.csproj",
+      "projectPath": "A:\\Programming\\C#\\Projects\\git\\EfficiencySystem\\EfficiencySystem\\EfficiencySystem.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\obj\\",
+      "outputPath": "A:\\Programming\\C#\\Projects\\git\\EfficiencySystem\\EfficiencySystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

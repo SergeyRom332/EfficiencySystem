@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HeUGbDo4suSeAQ93utI73xYSkGVjIY3ZI60Y/hh64vl8atuljOn7nKIJgrRhGtWNhK1n+noijBbaymX6AHXL3Q==",
+  "dgSpecHash": "857mf4rx4gFIXT43o4by4NdCufmxyKeUaXYEQXIYybjG5NfZxil1zkwwHw9rU92vpGuFvskbr42QY0E+1TmUBA==",
   "success": true,
-  "projectFilePath": "A:\\Programming\\C#\\Education\\Projects\\EfficiencySystem\\EfficiencySystem\\EfficiencySystem.csproj",
+  "projectFilePath": "A:\\Programming\\C#\\Projects\\git\\EfficiencySystem\\EfficiencySystem\\EfficiencySystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

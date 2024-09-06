@@ -2,7 +2,8 @@
 {
     public interface IRestaurantService
     {
-        public Task<List<Restaurant>> GetRestaurantAsync();
+        public Task<List<Restaurant>> GetRestaurantsAsync();
+        public List<Restaurant> GetRestaurants();
         public Task<Restaurant> GetRestaurantAsync(int id);
     }
 }

@@ -19,8 +19,8 @@ namespace EfficiencySystem.Controllers
 
         public async Task<IActionResult> Index(WorkShiftViewModel viewModel)
         {
-            viewModel.WorkShifts = await _workShiftService.GetWorkShiftsAsync(viewModel.RestaurantId, viewModel.DateFirst, viewModel.DateSecond);
-            viewModel.Restaurants = await _restaurantService.GetRestaurantAsync();
+            viewModel.WorkShifts = await _workShiftService.GetWorkShiftsAsync(viewModel.DateFirst, viewModel.DateSecond, viewModel.RestaurantId);
+            viewModel.Restaurants = await _restaurantService.GetRestaurantsAsync();
 
             return View(viewModel);
         }

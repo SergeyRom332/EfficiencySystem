@@ -1,31 +1,32 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml.FormulaParsing.Excel.Functions.Numeric;
+using System.Net.Http;
+using System;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace EfficiencySystem.Models.Services
 {
     public class WorkShiftService : IWorkShiftService
     {
         private MainDbContext _dbContext;
+        private HttpClient _httpClient;
+        private WorkShiftHttpClient _workShiftHttpClient;
 
-        public WorkShiftService(MainDbContext dbContext)
+        public WorkShiftService(MainDbContext dbContext, HttpClient httpClient, WorkShiftHttpClient workShiftHttpClient)
         {
             _dbContext = dbContext;
+            _httpClient = httpClient;
+            _workShiftHttpClient = workShiftHttpClient;
         }
 
-        public async Task<List<WorkShift>> GetWorkShiftsAsync(int restaurantId, DateTime dateFirst, DateTime dateSecond)
+        public async Task<List<WorkShift>> GetWorkShiftsAsync(DateTime dateFirst, DateTime dateSecond, int restaurantId)
         {
-            return await _dbContext.WorkShifts
-                .Where(i => i.RestaurantId == restaurantId && i.Date >= dateFirst && i.Date <= dateSecond)
-                .Include(i=>i.Restaurant)
-                .Include(i=>i.Staff)
-                .ToListAsync();
+            return await _workShiftHttpClient.GetWorkShifts(dateFirst, dateSecond, restaurantId);
         }
 
         public async Task<WorkShift> GetWorkShiftAsync(int id)
         {
-            return await _dbContext.WorkShifts
-                .Include(i => i.Restaurant)
-                .Include(i => i.Staff)
-                .FirstOrDefaultAsync(i => i.Id == id) ?? new WorkShift();
+            return await _workShiftHttpClient.GetWorkShift(id);
         }
 
         public async Task<List<WorkShift>> GetEmployeeWorkShifts(int employeeId, DateTime dateFirst, DateTime dateSecond)
@@ -39,8 +40,7 @@ namespace EfficiencySystem.Models.Services
 
         public async Task AddWorkShiftAsync(WorkShift workShift)
         {
-            _dbContext.WorkShifts.Add(workShift);
-            await _dbContext.SaveChangesAsync();
+            await _workShiftHttpClient.AddWorkShiftAsync(workShift);
         }
 
         public async Task UpdateWorkShiftAsync(WorkShift workShift)
@@ -58,14 +58,14 @@ namespace EfficiencySystem.Models.Services
         {
             return await _dbContext.WorkShiftDurations
                 .Where(i => i.PositionId == positionId)
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync() ?? new WorkShiftDuration();
         }
 
         public async Task<WorkShiftPayment> GetWorkShiftPayments(int positionId)
         {
             return await _dbContext.WorkShiftPayments
                 .Where(i => i.PositionId == positionId)
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync() ?? new WorkShiftPayment();
         }
     }
 

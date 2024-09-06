@@ -20,7 +20,7 @@ namespace EfficiencySystem.Controllers
         public async Task<IActionResult> Index(OrdersViewModel viewModel)
         {
             viewModel.Orders = await _ordersService.GetOrdersAsync(viewModel.RestaurantId, viewModel.DateFirst, viewModel.DateSecond);
-            viewModel.Restaurants = await _restaurantService.GetRestaurantAsync();
+            viewModel.Restaurants = await _restaurantService.GetRestaurantsAsync();
 
             return View(viewModel);
         }

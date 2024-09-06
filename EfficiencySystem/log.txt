@@ -1158,3 +1158,411 @@ WHERE NOT (`s`.`deleted`)
 2024-07-27 02:58:07 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT `d`.`id`, `d`.`name`
 FROM `department` AS `d` 
+2024-09-04 15:24:19 [Information] Now listening on: http://localhost:5254 
+2024-09-04 15:24:19 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 15:24:19 [Information] Hosting environment: Development 
+2024-09-04 15:24:19 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 15:24:21 [Information] Executed DbCommand (40ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 15:24:21 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 15:24:48 [Information] Start processing HTTP request GET http://127.0.0.1:7093/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:24:48 [Information] Sending HTTP request GET http://127.0.0.1:7093/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:24:50 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 15:25:28 [Information] Now listening on: http://localhost:5254 
+2024-09-04 15:25:28 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 15:25:28 [Information] Hosting environment: Development 
+2024-09-04 15:25:28 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 15:25:29 [Information] Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 15:25:29 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 15:26:51 [Information] Now listening on: http://localhost:5254 
+2024-09-04 15:26:51 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 15:26:51 [Information] Hosting environment: Development 
+2024-09-04 15:26:51 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 15:26:53 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 15:26:53 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 15:27:29 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:27:29 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:27:29 [Information] Received HTTP response headers after 40.0483ms - 404 
+2024-09-04 15:27:29 [Information] End processing HTTP request after 57.7407ms - 404 
+2024-09-04 15:46:04 [Information] Now listening on: http://localhost:5254 
+2024-09-04 15:46:04 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 15:46:04 [Information] Hosting environment: Development 
+2024-09-04 15:46:04 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 15:46:05 [Information] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 15:46:05 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 15:46:35 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:46:35 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:46:39 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:46:39 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:46:39 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:46:39 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:46:39 [Information] Received HTTP response headers after 62.2633ms - 400 
+2024-09-04 15:46:39 [Information] Received HTTP response headers after 98.6486ms - 400 
+2024-09-04 15:46:39 [Information] Received HTTP response headers after 3998.2976ms - 400 
+2024-09-04 15:46:39 [Information] End processing HTTP request after 138.7139ms - 400 
+2024-09-04 15:46:39 [Information] End processing HTTP request after 138.7567ms - 400 
+2024-09-04 15:46:39 [Information] End processing HTTP request after 4158.0055ms - 400 
+2024-09-04 15:46:39 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 15:46:39 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 15:46:39 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 15:47:06 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:47:06 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:47:06 [Information] Received HTTP response headers after 17.592ms - 400 
+2024-09-04 15:47:06 [Information] End processing HTTP request after 25.1771ms - 400 
+2024-09-04 15:48:38 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 15:48:42 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:48:42 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:48:42 [Information] Received HTTP response headers after 10.9834ms - 400 
+2024-09-04 15:48:42 [Information] End processing HTTP request after 17.9298ms - 400 
+2024-09-04 15:48:42 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 15:49:04 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:49:04 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:49:04 [Information] Received HTTP response headers after 17.9101ms - 400 
+2024-09-04 15:49:04 [Information] End processing HTTP request after 23.8367ms - 400 
+2024-09-04 15:49:04 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 15:50:11 [Information] Now listening on: http://localhost:5254 
+2024-09-04 15:50:11 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 15:50:11 [Information] Hosting environment: Development 
+2024-09-04 15:50:11 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 15:50:12 [Information] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 15:50:12 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 15:50:21 [Information] Now listening on: http://localhost:5254 
+2024-09-04 15:50:21 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 15:50:21 [Information] Hosting environment: Development 
+2024-09-04 15:50:21 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 15:50:22 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 15:50:22 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 15:50:42 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:50:42 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:50:51 [Information] Received HTTP response headers after 9755.6984ms - 200 
+2024-09-04 15:50:51 [Information] End processing HTTP request after 9772.7345ms - 200 
+2024-09-04 15:51:24 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-03&dateSecond=2024-09-03&restaurantId=0 
+2024-09-04 15:51:24 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-03&dateSecond=2024-09-03&restaurantId=0 
+2024-09-04 15:51:31 [Information] Received HTTP response headers after 6998.9664ms - 200 
+2024-09-04 15:51:31 [Information] End processing HTTP request after 7008.2532ms - 200 
+2024-09-04 15:57:29 [Information] Now listening on: http://localhost:5254 
+2024-09-04 15:57:29 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 15:57:29 [Information] Hosting environment: Development 
+2024-09-04 15:57:29 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 15:57:31 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 15:57:31 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 15:57:37 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:57:37 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/GetWorkShifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:57:37 [Information] Received HTTP response headers after 28.1007ms - 400 
+2024-09-04 15:57:37 [Information] End processing HTTP request after 44.9816ms - 400 
+2024-09-04 15:57:37 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 15:58:01 [Information] Now listening on: http://localhost:5254 
+2024-09-04 15:58:01 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 15:58:01 [Information] Hosting environment: Development 
+2024-09-04 15:58:01 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 15:58:02 [Information] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 15:58:02 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 15:58:12 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:58:12 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 15:58:12 [Information] Received HTTP response headers after 82.5161ms - 200 
+2024-09-04 15:58:12 [Information] End processing HTTP request after 99.9571ms - 200 
+2024-09-04 15:58:22 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-03&restaurantId=0 
+2024-09-04 15:58:22 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-03&restaurantId=0 
+2024-09-04 15:58:22 [Information] Received HTTP response headers after 16.9455ms - 200 
+2024-09-04 15:58:22 [Information] End processing HTTP request after 24.2571ms - 200 
+2024-09-04 17:08:23 [Information] Now listening on: http://localhost:5254 
+2024-09-04 17:08:23 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 17:08:23 [Information] Hosting environment: Development 
+2024-09-04 17:08:23 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 17:08:25 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 17:08:25 [Information] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 17:08:30 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:08:30 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:08:30 [Information] Received HTTP response headers after 62.1637ms - 200 
+2024-09-04 17:08:30 [Information] End processing HTTP request after 81.3682ms - 200 
+2024-09-04 17:08:34 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:08:34 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:08:35 [Information] Received HTTP response headers after 16.992ms - 200 
+2024-09-04 17:08:35 [Information] End processing HTTP request after 24.0094ms - 200 
+2024-09-04 17:11:02 [Information] Now listening on: http://localhost:5254 
+2024-09-04 17:11:02 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 17:11:02 [Information] Hosting environment: Development 
+2024-09-04 17:11:02 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 17:11:04 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 17:11:04 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 17:11:10 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:11:10 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:11:10 [Information] Received HTTP response headers after 28.5782ms - 200 
+2024-09-04 17:11:10 [Information] End processing HTTP request after 46.2523ms - 200 
+2024-09-04 17:11:10 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-09-04 17:11:14 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:11:14 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:11:14 [Information] Received HTTP response headers after 15.5963ms - 200 
+2024-09-04 17:11:14 [Information] End processing HTTP request after 23.1126ms - 200 
+2024-09-04 17:11:14 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-09-04 17:11:33 [Information] Start processing HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:11:33 [Information] Sending HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:11:33 [Information] Received HTTP response headers after 2.6208ms - 404 
+2024-09-04 17:11:33 [Information] End processing HTTP request after 9.7022ms - 404 
+2024-09-04 17:11:33 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 17:13:12 [Information] Start processing HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:13:12 [Information] Sending HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:13:12 [Information] Received HTTP response headers after 14.886ms - 404 
+2024-09-04 17:13:12 [Information] End processing HTTP request after 20.9415ms - 404 
+2024-09-04 17:13:13 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 17:13:50 [Information] Start processing HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:13:50 [Information] Sending HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:13:50 [Information] Received HTTP response headers after 18.364ms - 404 
+2024-09-04 17:13:50 [Information] End processing HTTP request after 24.9525ms - 404 
+2024-09-04 17:13:50 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 17:14:32 [Information] Start processing HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:14:32 [Information] Sending HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:14:37 [Information] Received HTTP response headers after 18.0368ms - 404 
+2024-09-04 17:14:39 [Information] End processing HTTP request after 6232.802ms - 404 
+2024-09-04 17:16:31 [Information] Now listening on: http://localhost:5254 
+2024-09-04 17:16:31 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 17:16:31 [Information] Hosting environment: Development 
+2024-09-04 17:16:31 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 17:16:33 [Information] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 17:16:33 [Information] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 17:16:41 [Information] Executed DbCommand (17ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE (`s`.`id` = @__id_0) AND (`s`.`id` = @__id_0)
+LIMIT 1 
+2024-09-04 17:16:46 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:16:46 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:16:46 [Information] Received HTTP response headers after 39.7451ms - 200 
+2024-09-04 17:16:46 [Information] End processing HTTP request after 57.1517ms - 200 
+2024-09-04 17:16:47 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-09-04 17:16:56 [Information] Start processing HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:16:56 [Information] Sending HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:16:56 [Information] Received HTTP response headers after 2.7296ms - 404 
+2024-09-04 17:16:56 [Information] End processing HTTP request after 9.5531ms - 404 
+2024-09-04 17:16:56 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 17:24:43 [Information] Now listening on: http://localhost:5254 
+2024-09-04 17:24:43 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 17:24:43 [Information] Hosting environment: Development 
+2024-09-04 17:24:43 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 17:24:44 [Information] Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 17:24:45 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 17:24:50 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:24:50 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:24:50 [Information] Received HTTP response headers after 71.5663ms - 200 
+2024-09-04 17:24:50 [Information] End processing HTTP request after 89.1032ms - 200 
+2024-09-04 17:24:50 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-09-04 17:24:54 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:24:54 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:24:54 [Information] Received HTTP response headers after 15.2542ms - 200 
+2024-09-04 17:24:54 [Information] End processing HTTP request after 22.5082ms - 200 
+2024-09-04 17:24:54 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-09-04 17:25:22 [Information] Start processing HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:25:22 [Information] Sending HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:25:22 [Information] Received HTTP response headers after 2.054ms - 404 
+2024-09-04 17:25:22 [Information] End processing HTTP request after 23.0382ms - 404 
+2024-09-04 17:26:21 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 17:26:28 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:26:28 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:26:28 [Information] Received HTTP response headers after 40.4999ms - 200 
+2024-09-04 17:26:28 [Information] End processing HTTP request after 46.1111ms - 200 
+2024-09-04 17:26:57 [Information] Now listening on: http://localhost:5254 
+2024-09-04 17:26:57 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 17:26:57 [Information] Hosting environment: Development 
+2024-09-04 17:26:57 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 17:26:58 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 17:26:58 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 17:27:07 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:27:07 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:27:07 [Information] Received HTTP response headers after 45.659ms - 200 
+2024-09-04 17:27:07 [Information] End processing HTTP request after 63.6944ms - 200 
+2024-09-04 17:27:07 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-09-04 17:27:13 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:27:13 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:27:13 [Information] Received HTTP response headers after 13.0514ms - 200 
+2024-09-04 17:27:13 [Information] End processing HTTP request after 20.3056ms - 200 
+2024-09-04 17:27:13 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-09-04 17:27:27 [Information] Start processing HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:27:27 [Information] Sending HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:27:27 [Information] Received HTTP response headers after 2.7816ms - 404 
+2024-09-04 17:27:27 [Information] End processing HTTP request after 9.1257ms - 404 
+2024-09-04 17:27:28 [Error] An unhandled exception has occurred while executing the request. 
+2024-09-04 17:27:32 [Information] Start processing HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:27:32 [Information] Sending HTTP request GET http://127.0.0.1:5232/3 
+2024-09-04 17:27:32 [Information] Received HTTP response headers after 0.9059ms - 404 
+2024-09-04 17:27:32 [Information] End processing HTTP request after 28.3847ms - 404 
+2024-09-04 17:28:10 [Information] Now listening on: http://localhost:5254 
+2024-09-04 17:28:10 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-04 17:28:10 [Information] Hosting environment: Development 
+2024-09-04 17:28:10 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-04 17:28:11 [Information] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-04 17:28:11 [Information] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-04 17:28:18 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:28:18 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-04&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:28:18 [Information] Received HTTP response headers after 36.6366ms - 200 
+2024-09-04 17:28:18 [Information] End processing HTTP request after 57.5322ms - 200 
+2024-09-04 17:28:18 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-09-04 17:28:24 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:28:24 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-04&restaurantId=0 
+2024-09-04 17:28:24 [Information] Received HTTP response headers after 18.1357ms - 200 
+2024-09-04 17:28:24 [Information] End processing HTTP request after 25.2639ms - 200 
+2024-09-04 17:28:24 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-09-04 17:28:40 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/3 
+2024-09-04 17:28:40 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/3 
+2024-09-04 17:28:40 [Information] Received HTTP response headers after 28.3056ms - 200 
+2024-09-04 17:28:40 [Information] End processing HTTP request after 36.094ms - 200 
+2024-09-04 17:28:59 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts/3 
+2024-09-04 17:28:59 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts/3 
+2024-09-04 17:28:59 [Information] Received HTTP response headers after 23.1245ms - 200 
+2024-09-04 17:28:59 [Information] End processing HTTP request after 29.9519ms - 200 
+2024-09-06 12:45:02 [Information] Now listening on: http://localhost:5254 
+2024-09-06 12:45:02 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-06 12:45:02 [Information] Hosting environment: Development 
+2024-09-06 12:45:02 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-06 12:45:04 [Information] Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-06 12:45:04 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 
+2024-09-06 12:45:22 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-06&dateSecond=2024-09-06&restaurantId=0 
+2024-09-06 12:45:22 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-06&dateSecond=2024-09-06&restaurantId=0 
+2024-09-06 12:45:23 [Information] Received HTTP response headers after 1377.8062ms - 200 
+2024-09-06 12:45:23 [Information] End processing HTTP request after 1394.4291ms - 200 
+2024-09-06 12:45:23 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-09-06 12:45:27 [Information] Start processing HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-06&restaurantId=0 
+2024-09-06 12:45:27 [Information] Sending HTTP request GET http://127.0.0.1:5232/workshifts?dateFirst=2024-09-01&dateSecond=2024-09-06&restaurantId=0 
+2024-09-06 12:45:27 [Information] Received HTTP response headers after 108.4541ms - 200 
+2024-09-06 12:45:27 [Information] End processing HTTP request after 115.892ms - 200 
+2024-09-06 12:45:27 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`id`, `r`.`address`, `r`.`name`
+FROM `restaurant` AS `r` 
+2024-09-06 13:03:49 [Information] Now listening on: http://localhost:5254 
+2024-09-06 13:03:49 [Information] Application started. Press Ctrl+C to shut down. 
+2024-09-06 13:03:49 [Information] Hosting environment: Development 
+2024-09-06 13:03:49 [Information] Content root path: A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem 
+2024-09-06 13:03:50 [Information] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`department_id`, `s`.`deleted`, `s`.`last_name`, `s`.`name`, `s`.`phone`, `s`.`position_id`, `d`.`id`, `d`.`name`, `p`.`id`, `p`.`name`
+FROM `staff` AS `s`
+INNER JOIN `department` AS `d` ON `s`.`department_id` = `d`.`id`
+INNER JOIN `positions` AS `p` ON `s`.`position_id` = `p`.`id`
+WHERE NOT (`s`.`deleted`) 
+2024-09-06 13:03:51 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `d`.`id`, `d`.`name`
+FROM `department` AS `d` 

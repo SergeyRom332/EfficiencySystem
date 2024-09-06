@@ -8,17 +8,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddMemoryCache();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient();
+builder.Services.AddHttpClient<WorkShiftHttpClient>();
+
 builder.Services.AddWorkShiftService();
 builder.Services.AddStaffService();
 builder.Services.AddRestaurantService();
 builder.Services.AddOrdersService();
 builder.Services.AddRevenueService();
 builder.Services.AddSalaryService();
-builder.Services.AddMemoryCache();
 builder.Services.AddCacheService();
 builder.Services.AddExcelService();
 builder.Services.AddAuthorizationService();
-builder.Services.AddHttpContextAccessor();
 builder.Services.AddDepartmentService();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>

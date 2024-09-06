@@ -9,99 +9,99 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EfficiencySystem
 build_property.RootNamespace = EfficiencySystem
-build_property.ProjectDir = A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem\
+build_property.ProjectDir = A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = A:\Programming\C#\Education\Projects\EfficiencySystem\EfficiencySystem
+build_property.MSBuildProjectDirectory = A:\Programming\C#\Projects\git\EfficiencySystem\EfficiencySystem
 build_property._RazorSourceGeneratorDebug = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Authorization/LogInPage.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Authorization/LogInPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxMb2dJblBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Authorization/LogInRequired.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Authorization/LogInRequired.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxMb2dJblJlcXVpcmVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Authorization/LogOutPage.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Authorization/LogOutPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxMb2dPdXRQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Authorization/NoRights.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Authorization/NoRights.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxOb1JpZ2h0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Home/HttpError.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Home/HttpError.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIdHRwRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Home/Index.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Home/Privacy.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Orders/Index.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Orders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Orders/Order.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Orders/Order.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXE9yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Revenue/Index.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Revenue/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2ZW51ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Salary/Cashiers.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Salary/Cashiers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5XENhc2hpZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Salary/Cooks.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Salary/Cooks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5XENvb2tzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Salary/Couriers.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Salary/Couriers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsYXJ5XENvdXJpZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Shared/Error.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Staff/Employee.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Staff/Employee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhZmZcRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Staff/Index.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Staff/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhZmZcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/WorkShift/Index.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/WorkShift/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya1NoaWZ0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/WorkShift/WorkShift.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/WorkShift/WorkShift.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya1NoaWZ0XFdvcmtTaGlmdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/_ViewImports.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/_ViewStart.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Programming/C\#/Education/Projects/EfficiencySystem/EfficiencySystem/Views/Shared/_Layout.cshtml]
+[A:/Programming/C\#/Projects/git/EfficiencySystem/EfficiencySystem/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-v8x9srp2kd
